@@ -15,6 +15,7 @@ env:
   REDIS_URL: redis://localhost:6379/8
   SIDEKIQ_WEB_USERNAME: admin
   SIDEKIQ_WEB_PASSWORD: password
+  RAILS_SECRET_KEY_BASE: 6a64ffc946182b3b4e2fc6e0503dafbedb7cf7c684d9d476f9fd3703dd87a13f1464b57cb0abb402f26df84c6ed7fb1e1e4798631b9fb7d8a9718755f479a365
 jobs:
   js_based_checks:
     runs-on: ubuntu-latest

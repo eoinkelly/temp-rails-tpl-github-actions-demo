@@ -1,0 +1,15 @@
+require "sidekiq/web"
+
+sidekiq_username = ENV.fetch("SIDEKIQ_WEB_USERNAME")
+sidekiq_password = ENV.fetch("SIDEKIQ_WEB_PASSWORD")
+
+# Sidekiq::Web.app_url = "/"
+Sidekiq::Web.use(Rack::Auth::Basic, "Application") do |username, password|
+  username == sidekiq_username &&
+    ActiveSupport::SecurityUtils.secure_compare(password, sidekiq_password)
+end
+
+# Job arguments which do not serialize to JSON safely will raise an error in
+# Sidekiq 7.0. See https://github.com/mperham/sidekiq/wiki/Best-Practices. We set
+# `strict_args!` to raise an error today and make upgrading to Sidekiq 7 easier.
+Sidekiq.strict_args!

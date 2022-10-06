@@ -12,6 +12,9 @@ concurrency:
 env:
   RAILS_ENV: test
   DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
+  REDIS_URL: redis://localhost:6379/8
+  SIDEKIQ_WEB_USERNAME: admin
+  SIDEKIQ_WEB_PASSWORD: password
 jobs:
   js_based_checks:
     runs-on: ubuntu-latest

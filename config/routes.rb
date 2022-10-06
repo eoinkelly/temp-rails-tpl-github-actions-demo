@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  authenticate :user do
+    # routes created within this block can only be accessed by a user who has
+    # logged in. For example:
+    # resources :things
+  end
+
+  devise_for :users, controllers: {
+    sessions: "users/sessions"
+  }
+
   ##
   # If you want the Sidekiq web console in production environments you need to
   # put it behind some authentication first.

@@ -70,6 +70,9 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     airbrussh (1.4.1)
       sshkit (>= 1.6.1, != 1.7.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.2)
     axe-matchers (2.6.1)
       dumb_delegator (~> 0.8)
@@ -117,6 +120,8 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
+    chusaku (0.6.1)
+      railties (>= 3.0)
     coderay (1.1.3)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -381,6 +386,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  annotate
   axe-matchers
   bcrypt_pbkdf
   bootsnap
@@ -393,6 +399,7 @@ DEPENDENCIES
   capistrano-rake
   capistrano-rbenv
   capybara
+  chusaku
   devise (~> 4.8)
   dotenv-rails
   ed25519

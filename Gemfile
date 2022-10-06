@@ -36,6 +36,10 @@ gem "stimulus-rails"
 # gem "image_processing", "~> 1.2"
 
 group :development do
+  # code annotation
+  gem "chusaku", require: false
+  gem "annotate", require: false
+
   gem "letter_opener"
 
   # Use console on exceptions pages [https://github.com/rails/web-console]
